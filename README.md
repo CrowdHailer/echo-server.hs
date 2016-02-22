@@ -48,7 +48,7 @@ Explanation of `liftM`:
 
 `hGetLine handle` is not a String, rather it is an action which produces a String.
 
-`<-` is what tells hGetLine to actually run.
+`<-` tells `hGetLine` to actually run.
 
 `init` cannot be applied to an action, it can only be applied to a List (in this case a list of Char)
 
