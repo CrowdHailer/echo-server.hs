@@ -45,14 +45,21 @@ init [1,2,3]
 ```
 
 Explanation of `liftM`:
+
 `hGetLine handle` is not a String, rather it is an action which produces a String.
+
 `<-` is what tells hGetLine to actually run.
+
 `init` cannot be applied to an action, it can only be applied to a List (in this case a list of Char)
+
 You can `liftM` a function (in this case `init`) to allow it to apply to an action.
 
 Putting it together:
+
 `hGetLine` takes a handle and gives back an action which reads the handle and produces a string
+
 `(hGetLine handle)` is an action which reads the handle and produces a string
+
 `(liftM init) (hGetLine handle)` is an action which reads a handle and produces all the Chars from the handle except the last one.
 
 (The reason it doesn't look like it does anything to the program is because it's stripping off the trailing '\r' on the incoming string, but hPutStrLn prints one out anyway)
