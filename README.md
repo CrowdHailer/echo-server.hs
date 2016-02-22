@@ -37,9 +37,10 @@ name <- hGetLine hdl
 ```
 
 Explanation of `init`:
-init returns all but the last element of a list.
-e.g.
-```hs init [1,2,3]
+
+init returns all but the last element of a list, e.g.
+```hs
+init [1,2,3]
 [1,2]
 ```
 
