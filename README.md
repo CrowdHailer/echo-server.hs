@@ -36,7 +36,7 @@ name <- liftM init (hGetLine hdl)
 name <- hGetLine hdl
 ```
 
-Explanation of `init`:
+#### Explanation of `init`:
 
 init returns all but the last element of a list, e.g.
 ```hs
@@ -44,7 +44,7 @@ init [1,2,3]
 [1,2]
 ```
 
-Explanation of `liftM`:
+#### Explanation of `liftM`:
 
 `hGetLine handle` is not a String, rather it is an action which produces a String.
 
@@ -54,7 +54,7 @@ Explanation of `liftM`:
 
 You can `liftM` a function (in this case `init`) to allow it to apply to an action.
 
-Putting it together:
+#### Putting it together:
 
 `hGetLine` takes a handle and gives back an action which reads the handle and produces a string
 
