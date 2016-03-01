@@ -1,4 +1,4 @@
-module Echo where
+module Main where
 
 import Network.Socket
 import System.IO
